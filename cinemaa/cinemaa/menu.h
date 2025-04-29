@@ -1,10 +1,10 @@
-#pragma once
 #ifndef MENU_H
 #define MENU_H
 
-void displayMovies();
-void bookTicket();
-void cancelBooking();
-void displayMenu();
+class Menu {
+public:
+    void displayMainMenu();
+    void handleUserChoice();
+};
 
-#endif
+#endif // MENU_H
