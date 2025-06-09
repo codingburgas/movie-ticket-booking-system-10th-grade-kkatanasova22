@@ -18,6 +18,7 @@ void Menu::displayMainMenu() {
     cout << "2. View Booked Tickets\n";
     cout << "3. Cancel a Ticket\n";
     cout << "4. Exit\n";
+    cout << "5. Help\n";
     cout << "Enter your choice: ";
 }
 void Menu::displayMovies() {
@@ -53,6 +54,16 @@ void Menu::displayMovies() {
     }
 }
 
+void Menu::printHelp() {
+    cout << "\n========== Help Menu ==========\n";
+    cout << "1. Book a Ticket        - Choose this to see available movies and book a seat.\n";
+    cout << "2. View Booked Tickets  - Shows all your current bookings.\n";
+    cout << "3. Cancel a Ticket      - Allows you to cancel a previously booked ticket.\n";
+    cout << "4. Exit                 - Exit the Ticket Booking System.\n";
+    cout << "5. Help                 - Show this help information.\n";
+    cout << "===============================\n\n";
+}
+
 void Menu::handleUserChoice() {
     int choice;
     printWelcomeMessage();
@@ -76,6 +87,9 @@ void Menu::handleUserChoice() {
         case 4:
             cout << "Exiting the system. Goodbye!\n";
             return;
+        case 5:
+            printHelp();
+            break;
         default:
             cout << "Invalid choice. Please try again.\n";
         }
