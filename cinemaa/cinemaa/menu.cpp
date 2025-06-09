@@ -20,6 +20,38 @@ void Menu::displayMainMenu() {
     cout << "4. Exit\n";
     cout << "Enter your choice: ";
 }
+void Menu::displayMovies() {
+    
+    struct Movie {
+        string title;
+        string description;
+        string date;
+        string hour;
+        int availableSeats;
+    };
+
+    Movie movies[] = {
+        {"Inception", "A mind-bending thriller by Christopher Nolan.", "2025-06-10", "18:00", 25},
+        {"The Lion King", "An animated masterpiece about the circle of life.", "2025-06-11", "15:00", 40},
+        {"Interstellar", "A journey through space and time.", "2025-06-12", "20:00", 15},
+        {"Avengers: Endgame", "Superheroes assemble for an epic battle.", "2025-06-13", "19:30", 30},
+        {"Parasite", "A darkly comedic tale of class struggle.", "2025-06-14", "17:00", 18},
+        {"The Godfather", "A classic mafia family saga.", "2025-06-15", "21:00", 12},
+        {"Spirited Away", "A magical journey in a mysterious world.", "2025-06-16", "13:00", 20},
+        {"Titanic", "A timeless romance on the ill-fated ship.", "2025-06-17", "22:00", 28}
+    };
+
+    cout << "\nAvailable Movies:\n";
+    cout << "--------------------------------------------------\n";
+    for (const auto& movie : movies) {
+        cout << "Title: " << movie.title << "\n";
+        cout << "Description: " << movie.description << "\n";
+        cout << "Date: " << movie.date << "\n";
+        cout << "Hour: " << movie.hour << "\n";
+        cout << "Available Seats: " << movie.availableSeats << "\n";
+        cout << "--------------------------------------------------\n";
+    }
+}
 
 void Menu::handleUserChoice() {
     int choice;
@@ -31,7 +63,7 @@ void Menu::handleUserChoice() {
         switch (choice) {
         case 1:
             cout << "Booking a ticket...\n";
-            
+            displayMovies();
             break;
         case 2:
             cout << "Viewing booked tickets...\n";
