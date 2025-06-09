@@ -3,6 +3,13 @@
 
 using namespace std;
 
+void Menu::printWelcomeMessage() {
+    cout << "============================================\n";
+    cout << "   Welcome to the Ticket Booking System!    \n";
+    cout << "   Your journey starts with a simple step.  \n";
+    cout << "============================================\n\n";
+}
+
 void Menu::displayMainMenu() {
     cout << "=============================\n";
     cout << "     Ticket Booking System   \n";
@@ -16,6 +23,7 @@ void Menu::displayMainMenu() {
 
 void Menu::handleUserChoice() {
     int choice;
+    printWelcomeMessage();
     while (true) {
         displayMainMenu();
         cin >> choice;
