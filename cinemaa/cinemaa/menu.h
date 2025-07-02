@@ -7,6 +7,8 @@ public:
     void handleUserChoice();
     void printWelcomeMessage();
     void displayMovies();
+    void printHelp();
+    
 };
 
 #endif // MENU_H

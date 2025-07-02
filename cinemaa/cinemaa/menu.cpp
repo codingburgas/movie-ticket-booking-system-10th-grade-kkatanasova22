@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <iomanip>
 #include "menu.h"
 
 using namespace std;
@@ -21,8 +24,8 @@ void Menu::displayMainMenu() {
     cout << "5. Help\n";
     cout << "Enter your choice: ";
 }
+
 void Menu::displayMovies() {
-    
     struct Movie {
         string title;
         string description;
@@ -31,7 +34,7 @@ void Menu::displayMovies() {
         int availableSeats;
     };
 
-    Movie movies[] = {
+    vector<Movie> movies = {
         {"Inception", "A mind-bending thriller by Christopher Nolan.", "2025-06-10", "18:00", 25},
         {"The Lion King", "An animated masterpiece about the circle of life.", "2025-06-11", "15:00", 40},
         {"Interstellar", "A journey through space and time.", "2025-06-12", "20:00", 15},
@@ -78,11 +81,9 @@ void Menu::handleUserChoice() {
             break;
         case 2:
             cout << "Viewing booked tickets...\n";
-           
             break;
         case 3:
             cout << "Cancelling a ticket...\n";
-            
             break;
         case 4:
             cout << "Exiting the system. Goodbye!\n";
