@@ -41,21 +41,16 @@ void Menu::displayMovies() {
         {"The Lion King", "An animated masterpiece about the circle of life.", "2025-06-11", "15:00", 40},
         {"Interstellar", "A journey through space and time.", "2025-06-12", "20:00", 15},
         {"Avengers: Endgame", "Superheroes assemble for an epic battle.", "2025-06-13", "19:30", 30},
-        {"Parasite", "A darkly comedic tale of class struggle.", "2025-06-14", "17:00", 18},
-        {"The Godfather", "A classic mafia family saga.", "2025-06-15", "21:00", 12},
-        {"Spirited Away", "A magical journey in a mysterious world.", "2025-06-16", "13:00", 20},
-        {"Titanic", "A timeless romance on the ill-fated ship.", "2025-06-17", "22:00", 28}
     };
 
-    cout << "\nAvailable Movies:\n";
-    cout << "--------------------------------------------------\n";
+    cout << "\n========== Available Movies ==========\n";
     for (const auto& movie : movies) {
-        cout << "Title: " << movie.title << "\n";
-        cout << "Description: " << movie.description << "\n";
-        cout << "Date: " << movie.date << "\n";
-        cout << "Hour: " << movie.hour << "\n";
-        cout << "Available Seats: " << movie.availableSeats << "\n";
-        cout << "--------------------------------------------------\n";
+        cout << "Title       : " << movie.title << "\n";
+        cout << "Description : " << movie.description << "\n";
+        cout << "Date        : " << movie.date << "\n";
+        cout << "Hour        : " << movie.hour << "\n";
+        cout << "Seats       : " << movie.availableSeats << "\n";
+        cout << "--------------------------------------\n";
     }
 }
 
@@ -78,6 +73,7 @@ void Menu::handleUserChoice() {
 
         switch (choice) {
         case 1:
+          
             bookTicket();
             break;
         case 2:

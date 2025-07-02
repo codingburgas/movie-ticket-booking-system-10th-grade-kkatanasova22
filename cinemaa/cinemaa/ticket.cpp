@@ -6,7 +6,7 @@
 using namespace std;
 
 
-vector<Ticket> bookedTickets = {};
+vector<Ticket> bookedTickets = {}; 
 
 
 
@@ -34,6 +34,7 @@ void bookTicket() {
         {"The Lion King", "2025-06-11", "15:00", 40},
         {"Interstellar", "2025-06-12", "20:00", 15},
         {"Avengers: Endgame", "2025-06-13", "19:30", 30}
+
     };
 
     cout << "\nAvailable Movies:\n";
