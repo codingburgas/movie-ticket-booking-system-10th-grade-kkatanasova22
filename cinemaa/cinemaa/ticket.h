@@ -12,6 +12,8 @@ struct Ticket {
 };
 
 void viewBookedTickets();
+void bookTicket(); 
+
 extern std::vector<Ticket> bookedTickets;
 
 #endif // TICKET_H

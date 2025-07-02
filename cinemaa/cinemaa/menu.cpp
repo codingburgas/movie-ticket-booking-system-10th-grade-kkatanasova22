@@ -78,8 +78,7 @@ void Menu::handleUserChoice() {
 
         switch (choice) {
         case 1:
-            cout << "Booking a ticket...\n";
-            displayMovies();
+            bookTicket();
             break;
         case 2:
             viewBookedTickets();
