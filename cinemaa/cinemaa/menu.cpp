@@ -3,6 +3,8 @@
 #include <string>
 #include <iomanip>
 #include "menu.h"
+#include "ticket.h"
+
 
 using namespace std;
 
@@ -80,8 +82,9 @@ void Menu::handleUserChoice() {
             displayMovies();
             break;
         case 2:
-            cout << "Viewing booked tickets...\n";
+            viewBookedTickets();
             break;
+
         case 3:
             cout << "Cancelling a ticket...\n";
             break;
