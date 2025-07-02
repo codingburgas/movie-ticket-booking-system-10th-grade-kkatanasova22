@@ -13,6 +13,7 @@ struct Ticket {
 
 void viewBookedTickets();
 void bookTicket(); 
+void cancelTicket();
 
 extern std::vector<Ticket> bookedTickets;
 

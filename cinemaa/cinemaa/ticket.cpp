@@ -6,10 +6,8 @@
 using namespace std;
 
 
-vector<Ticket> bookedTickets = {
-    {"Inception", "2025-06-10", "18:00", 12},
-    {"Titanic", "2025-06-17", "22:00", 5}
-};
+vector<Ticket> bookedTickets = {};
+
 
 
 void viewBookedTickets() {
@@ -79,4 +77,30 @@ void bookTicket() {
     cout << "Movie: " << booked.movieTitle << "\n";
     cout << "Date: " << booked.date << " at " << booked.hour << "\n";
     cout << "Seat: " << booked.seatNumber << "\n\n";
+}void cancelTicket() {
+    if (bookedTickets.empty()) {
+        cout << "\nYou have no tickets to cancel.\n";
+        return;
+    }
+
+    cout << "\n========== Your Booked Tickets ==========\n";
+    for (size_t i = 0; i < bookedTickets.size(); ++i) {
+        const Ticket& t = bookedTickets[i];
+        cout << i + 1 << ". " << t.movieTitle << " - " << t.date << " at " << t.hour
+            << " | Seat: " << t.seatNumber << "\n";
+    }
+
+    int cancelIndex;
+    cout << "Enter the number of the ticket you want to cancel: ";
+    cin >> cancelIndex;
+
+    if (cin.fail() || cancelIndex < 1 || cancelIndex > bookedTickets.size()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid selection.\n";
+        return;
+    }
+
+    bookedTickets.erase(bookedTickets.begin() + (cancelIndex - 1));
+    cout << " Ticket cancelled successfully.\n";
 }

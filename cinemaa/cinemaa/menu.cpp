@@ -85,8 +85,9 @@ void Menu::handleUserChoice() {
             break;
 
         case 3:
-            cout << "Cancelling a ticket...\n";
+            cancelTicket();
             break;
+
         case 4:
             cout << "Exiting the system. Goodbye!\n";
             return;
