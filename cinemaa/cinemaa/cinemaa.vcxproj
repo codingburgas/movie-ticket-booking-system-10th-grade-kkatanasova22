@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="payment.h" />
     <ClInclude Include="ticket.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="payment.cpp" />
     <ClCompile Include="ticket.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

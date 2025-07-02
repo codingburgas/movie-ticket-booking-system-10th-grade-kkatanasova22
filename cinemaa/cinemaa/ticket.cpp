@@ -2,6 +2,7 @@
 #include <vector>
 #include <limits>
 #include "ticket.h"
+#include "payment.h"
 
 using namespace std;
 
@@ -29,6 +30,12 @@ void viewBookedTickets() {
 }
 
 void bookTicket() {
+    double ticketPrice = 10.00;
+    if (!processPayment(ticketPrice)) {
+        cout << "Booking cancelled due to failed payment.\n";
+        return;
+    }
+
     vector<Ticket> availableMovies = {
         {"Inception", "2025-06-10", "18:00", 25},
         {"The Lion King", "2025-06-11", "15:00", 40},

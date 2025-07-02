@@ -4,6 +4,8 @@
 #include <iomanip>
 #include "menu.h"
 #include "ticket.h"
+#include "payment.h"
+
 
 
 using namespace std;
