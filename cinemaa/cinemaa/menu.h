@@ -8,6 +8,8 @@ public:
     void printWelcomeMessage();
     void displayMovies();
     void printHelp();
+    void adminPanel();
+
     
 };
 

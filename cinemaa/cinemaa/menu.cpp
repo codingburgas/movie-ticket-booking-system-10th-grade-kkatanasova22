@@ -24,6 +24,7 @@ void Menu::displayMainMenu() {
     cout << "3. Cancel a Ticket\n";
     cout << "4. Exit\n";
     cout << "5. Help\n";
+    cout << "6. Admin Panel\n";
     cout << "Enter your choice: ";
 }
 
@@ -90,8 +91,92 @@ void Menu::handleUserChoice() {
         case 5:
             printHelp();
             break;
+        case 6:
+            adminPanel();
+            break;
+
         default:
             cout << "Invalid choice. Please try again.\n";
+        }
+    }
+}
+void Menu::adminPanel() {
+    string password;
+    cout << "\n=== Admin Login ===\n";
+    cout << "Enter admin password: ";
+    cin >> password;
+
+    if (password != "admin") {
+        cout << "Wrong password. Access denied.\n";
+        return;
+    }
+
+    struct Movie {
+        string title;
+        string description;
+        string date;
+        string time;
+        int seats;
+    };
+
+    static vector<Movie> movies = {
+        {"Inception", "A mind-bending thriller.", "2025-06-10", "18:00", 25},
+        {"Titanic", "A romance on a sinking ship.", "2025-06-17", "22:00", 28}
+    };
+
+    int choice;
+
+    while (true) {
+        cout << "\n--- Admin Panel ---\n";
+        cout << "1. View Movies\n";
+        cout << "2. Add Movie\n";
+        cout << "3. Remove Movie\n";
+        cout << "4. Exit\n";
+        cout << "Choose: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            cout << "\nMovie List:\n";
+            for (int i = 0; i < movies.size(); i++) {
+                cout << i + 1 << ". " << movies[i].title << " - " << movies[i].date
+                    << " " << movies[i].time << ", Seats: " << movies[i].seats << "\n";
+                cout << "   " << movies[i].description << "\n";
+            }
+        }
+        else if (choice == 2) {
+            Movie m;
+            cout << "Title: ";
+            cin.ignore(); getline(cin, m.title);
+            cout << "Description: ";
+            getline(cin, m.description);
+            cout << "Date (YYYY-MM-DD): ";
+            cin >> m.date;
+            cout << "Time (HH:MM): ";
+            cin >> m.time;
+            cout << "Available Seats: ";
+            cin >> m.seats;
+
+            movies.push_back(m);
+            cout << "Movie added.\n";
+        }
+        else if (choice == 3) {
+            int index;
+            cout << "Enter movie number to remove: ";
+            cin >> index;
+            if (index >= 1 && index <= movies.size()) {
+                movies.erase(movies.begin() + index - 1);
+                cout << "Movie removed.\n";
+            }
+            else {
+                cout << "Invalid number.\n";
+            }
+        }
+        else if (choice == 4) {
+            cout << "Exiting Admin Panel.\n";
+            break;
+        }
+        else {
+            cout << "Invalid choice.\n";
         }
     }
 }
